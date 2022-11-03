@@ -1,38 +1,282 @@
-.App {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("./img/bg.png");
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  position:relative;
+}
+
+html {
+  position:relative;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  top:0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  height: 100px;
+  width: 100%;
+  background-color: rgba(72, 72, 155, 0.432);
+  box-shadow:0 3px 15px 0 rgba(72, 72, 155, 0.808);
+}
+
+@media screen and (max-width:386px){
+  .navbar{
+    justify-content: space-evenly;
+  }
+  .navbar-btns{
+    margin:0;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .nav-text{
+    margin-left:30px;
+  }
+
+  .navbar p{
+    margin-left:10px;
+  }
+
+  .navbar-btns button{
+      padding:5px;
+      width:50px;
+      margin:5px;
+  }
+}
+
+.navbar p {
+  color: white;
+  font-size: 30px;
+  margin-left: 0;
+  font-weight: bold;
+
+}
+
+.nav-text{
+  
+}
+
+.navbar-btns {
+  display: flex;
+  flex-flow:row wrap;
+  align-items: center;
+  margin-left: 15px;
+
+
+}
+
+.navbar-btns button {
+  background-color: rgba(99, 170, 236, 0.61);
+  color:white;
+  font-weight:lighter;
+  margin: 10px 10px;
+  width: 100px;
+  padding: 10px 10px;
+  border-radius: 20px ;
+  transform: scale(1);
+  transition:0.3s linear;
+}
+
+.navbar-btns button:hover {
+  background-color: rgba(99, 170, 236, 0.849);
+  box-shadow:2px 1px 1px 1px rgba(99, 170, 236, 0.171);
+  font-weight:bold;
+  transform: scale(1.2);
+  transition:0.3s linear;
+}
+
+.content{
+  display:flex;
+  flex-flow:row wrap;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+}
+
+.posts{
+  display:flex;
+  flex-flow:row wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  width:100%;
+}
+
+.post{
+  background-color: rgba(72, 72, 155, 0.226);
+  color:white;
+  display:flex;
+  flex-direction: column;
+  margin-top:10px;
+}
+
+.post:hover{
+  background-color: rgba(101, 101, 158, 0.555);
+}
+
+.post h1,h3{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.post img{
+  height:320px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.test-btns{
+  display:none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.noposts{
+  color:white;
+  font-size:30px;
+  font-weight: bold;
+}
+
+.postx{
+  background-color: rgba(72, 72, 155, 0.226);
+  color:white;
+  display:flex;
   flex-direction: column;
+  margin-top:10px;
+  height:100%;
+}
+
+
+.postx h1,h3{
+  text-align: center;
+}
+
+.postx img{
+  height:400px;
+  width:100%;
+}
+
+.post-buttons{
+  display:flex;
+  flex-direction: center;
+  align-items: center;
+  align-self: center;
+}
+
+.post-buttons button {
+  background-color: rgba(99, 170, 236, 0.61);
+  color:white;
+  font-weight:lighter;
+  margin: 10px 10px;
+  width: 100px;
+  padding: 10px 10px;
+  border-radius: 20px ;
+  transform: scale(1);
+  transition:0.3s linear;
+}
+
+.post-buttons button:hover {
+  background-color: rgba(99, 170, 236, 0.849);
+  box-shadow:2px 1px 1px 1px rgba(99, 170, 236, 0.171);
+  font-weight:bold;
+  transform: scale(1.2);
+  transition:0.3s linear;
+}
+
+.post-buttons .del{
+  background-color: rgba(168, 32, 32, 0.61);
+  color:white;
+  font-weight:lighter;
+  margin: 10px 10px;
+  width: 100px;
+  padding: 10px 10px;
+  border-radius: 20px ;
+  transform: scale(1);
+  transition:0.3s linear;
+}
+
+.post-buttons .del:hover{
+  background-color: rgba(168, 32, 32, 0.877);
+  box-shadow:2px 1px 1px 1px rgba(99, 170, 236, 0.171);
+  font-weight:bold;
+  transform: scale(1.2);
+  transition:0.3s linear;
+}
+
+.test-btns{
+  display:none;
+}
+
+.content{
+  display:flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.upload{
+  height:100%;
+  width:60%;
+  background-color: rgba(72, 72, 155, 0.226);
+  margin-top:30px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  color:white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.upload input{
+  background-color:rgba(97, 97, 153, 0.123); 
+  color:white;
+  border:1px solid rgba(97, 97, 153, 0.856);
+  height:30px;
+  font-size:15px;
+  width:98%;
+  text-align: center;
+  margin-bottom:20px;
+}
+
+.upload p{
+  font-size:23px;
+}
+.upload button{
+  background-color: rgba(99, 170, 236, 0.61);
+  color:white;
+  font-weight:lighter;
+  margin: 10px 10px;
+  width: 100px;
+  padding: 10px 10px;
+  border-radius: 20px ;
+  transform: scale(1);
+  transition:0.3s linear;
+}
+
+.upload button:hover {
+  background-color: rgba(99, 170, 236, 0.849);
+  box-shadow:2px 1px 1px 1px rgba(99, 170, 236, 0.171);
+  font-weight:bold;
+  transform: scale(1.2);
+  transition:0.3s linear;
+}
+
+
+.upload .logerr{
+  margin-top:15px;
+  color:red;
+  font-size:20px;
+}
+
+
+.login-cont{
+  text-align:center;
 }
